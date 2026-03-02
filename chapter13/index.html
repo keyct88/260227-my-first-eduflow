@@ -1987,15 +1987,16 @@
 <h2 id="_5">🔨 따라하기<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="step-1-vs">Step 1: 개선 전 그래프 vs 개선 후 그래프 비교<a class="headerlink" href="#step-1-vs" title="Permanent link">&para;</a></h3>
 <p>아래 두 코드를 실행해서 차이를 직접 확인해 보세요!</p>
-<p><strong>❌ 개선 전 — 정보가 부족한 그래프:</strong></p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;수학&#39;</span><span class="p">,</span> <span class="s1">&#39;영어&#39;</span><span class="p">,</span> <span class="s1">&#39;과학&#39;</span><span class="p">,</span> <span class="s1">&#39;국어&#39;</span><span class="p">]</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">88</span><span class="p">]</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">subjects</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</span></code></pre></div>
+                <ol>
+      <li>스프레드시트에 아래 데이터를 입력하세요:<br>
+        A열: 과목 → 수학, 영어, 과학, 국어<br>
+        B열: 점수 → 85, 92, 78, 88
+      </li>
+      <li>데이터 범위를 선택 → 삽입 → 차트 → 기본 막대그래프 생성</li>
+      <li>제목, 축 레이블, 단위가 없는 상태를 확인하세요.</li>
+    </ol>
+
+
 <p><strong>실행 결과:</strong>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>제목 없음, 축 설명 없음, 단위 없음 — 뭘 보여주는 그래프인지 모름!
 </span></code></pre></div></p>
