@@ -1985,9 +1985,9 @@
 </ul>
 <hr />
 <h2 id="_5">🔨 따라하기<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h3 id="step-1-vs">Step 1: 개선 전 그래프 vs 개선 후 그래프 비교<a class="headerlink" href="#step-1-vs" title="Permanent link">&para;</a></h3>
+<h3 id="step-1-vs">Step 1: 개선 전 그래프 확인하기<a class="headerlink" href="#step-1-vs" title="Permanent link">&para;</a></h3>
 <p>아래 두 코드를 실행해서 차이를 직접 확인해 보세요!</p>
-                <ol>
+    <ol>
       <li>스프레드시트에 아래 데이터를 입력하세요:<br>
         A열: 과목 → 수학, 영어, 과학, 국어<br>
         B열: 점수 → 85, 92, 78, 88
@@ -1995,95 +1995,43 @@
       <li>데이터 범위를 선택 → 삽입 → 차트 → 기본 막대그래프 생성</li>
       <li>제목, 축 레이블, 단위가 없는 상태를 확인하세요.</li>
     </ol>
-
-
-<p><strong>실행 결과:</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>제목 없음, 축 설명 없음, 단위 없음 — 뭘 보여주는 그래프인지 모름!
-</span></code></pre></div></p>
 <hr />
-<h3 id="step-2">Step 2: 체크리스트를 적용한 개선 후 그래프<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Malgun Gothic&#39;</span>  <span class="c1"># 한글 설정</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;수학&#39;</span><span class="p">,</span> <span class="s1">&#39;영어&#39;</span><span class="p">,</span> <span class="s1">&#39;과학&#39;</span><span class="p">,</span> <span class="s1">&#39;국어&#39;</span><span class="p">]</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">88</span><span class="p">]</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># 색상으로 시각적 강조</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#4C72B0&#39;</span><span class="p">,</span> <span class="s1">&#39;#DD8452&#39;</span><span class="p">,</span> <span class="s1">&#39;#55A868&#39;</span><span class="p">,</span> <span class="s1">&#39;#C44E52&#39;</span><span class="p">]</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">subjects</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1"># ✅ 제목 추가</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;2학년 1반 평균 과목별 점수&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1"># ✅ 축 레이블 + 단위 추가</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;과목&#39;</span><span class="p">)</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;점수 (점)&#39;</span><span class="p">)</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="c1"># ✅ y축 범위 조정 (차이가 더 잘 보이게)</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</span></code></pre></div>
-<p><strong>실행 결과:</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>- 제목: &quot;2학년 1반 평균 과목별 점수&quot; 표시됨
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>- x축: 과목명 표시
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>- y축: 점수 (점) 표시
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>- 각 막대가 서로 다른 색으로 구분됨
-</span></code></pre></div></p>
+<h3 id="step-2">Step 2: 체크리스트 적용하기<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
+    <ol>
+      <li>차트를 더블클릭 → 차트 편집기 열기</li>
+      <li>맞춤 설정 탭에서 다음 항목 수정:
+        <ul>
+          <li>차트 제목: "2학년 1반 평균 과목별 점수"</li>
+          <li>x축 제목: "과목"</li>
+          <li>y축 제목: "점수 (점)"</li>
+          <li>색상 변경: 각 막대를 다른 색으로 지정</li>
+          <li>범례 추가: 필요할 경우 표시</li>
+        </ul>
+      </li>
+      <li>y축 범위 조정: 최소값 60, 최대값 100</li>
+    </ol>       
 <blockquote>
 <p>✅ <strong>체크포인트</strong>: 두 그래프를 비교했을 때, 개선 후 그래프가 훨씬 무슨 내용인지 바로 이해되시나요? 이게 바로 체크리스트의 힘이에요!</p>
 </blockquote>
 <hr />
 <h3 id="step-3">Step 3: 내 그래프에 체크리스트 적용하기<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h3>
-<p>지금까지 만든 <strong>내 프로젝트 그래프</strong>를 열고, 아래 항목을 하나씩 확인해 보세요.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 아래 항목들이 내 코드에 있는지 확인하세요!</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;여기에 그래프 제목을 쓰세요&#39;</span><span class="p">)</span>   <span class="c1"># 제목</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x축이 나타내는 것 (단위)&#39;</span><span class="p">)</span>     <span class="c1"># x축 레이블</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y축이 나타내는 것 (단위)&#39;</span><span class="p">)</span>     <span class="c1"># y축 레이블</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>                              <span class="c1"># 범례 (여러 데이터일 때)</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>                        <span class="c1"># 레이아웃 자동 정리</span>
-</span></code></pre></div>
-<hr />
-<h2 id="_6">📝 전체 점검 코드<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>내 그래프를 체크리스트 기준으로 완성하는 템플릿이에요. 복사해서 활용해 보세요!</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Malgun Gothic&#39;</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># --- 여기에 내 데이터를 넣으세요 ---</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">x_data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;항목1&#39;</span><span class="p">,</span> <span class="s1">&#39;항목2&#39;</span><span class="p">,</span> <span class="s1">&#39;항목3&#39;</span><span class="p">]</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">y_data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># -----------------------------------</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">)</span>  <span class="c1"># 그래프 종류 변경 가능</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1"># ✅ 체크리스트 5가지 적용</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;그래프 제목을 여기에&#39;</span><span class="p">)</span>          <span class="c1"># 1. 제목</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x축 이름 (단위)&#39;</span><span class="p">)</span>             <span class="c1"># 2. x축 레이블+단위</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y축 이름 (단위)&#39;</span><span class="p">)</span>             <span class="c1"># 3. y축 레이블+단위</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="c1"># 색상은 color 파라미터로 이미 적용       # 4. 색상</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="c1"># 여러 데이터라면 plt.legend() 추가       # 5. 범례</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</span></code></pre></div>
+<p>내가 만든 그래프를 열고 아래 항목을 하나씩 확인하세요:</p>
+    <ul>
+      <li>제목이 있는가?</li>
+      <li>축 레이블과 단위가 있는가?</li>
+      <li>색상이 구분되기 쉬운가?</li>
+      <li>범례가 필요한 경우 추가했는가?</li>
+      <li>레이아웃이 깔끔하게 정리되었는가?</li>
+    </ul>
+
 <hr />
 <h2 id="_7">⚠️ 자주 하는 실수<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>실수 1</strong>: 제목은 달았는데 축 레이블을 빠뜨리는 경우</li>
-<li>왜 생기나요? 그래프가 그려지면 "다 됐다!"고 느끼기 때문이에요</li>
-<li>
-<p>해결법: 코드를 쓸 때 <code>plt.title</code>, <code>plt.xlabel</code>, <code>plt.ylabel</code> 세 줄을 <strong>세트</strong>로 항상 함께 써요</p>
-</li>
-<li>
-<p><strong>실수 2</strong>: 한글이 깨져서 □□□로 나오는 경우</p>
-</li>
-<li>해결법: 코드 맨 위에 <code>plt.rcParams['font.family'] = 'Malgun Gothic'</code> 추가! (Mac은 <code>'AppleGothic'</code>)</li>
-</ul>
+    <ul>
+      <li>제목만 넣고 축 레이블을 빼먹는 경우 → 반드시 x축, y축 이름 추가</li>
+      <li>색상을 너무 유사하게 지정하는 경우 → 대비되는 색상 사용</li>
+      <li>데이터 범위를 잘못 선택해 항목 이름 없이 숫자만 들어간 경우 → 항목과 값 열을 함께 선택</li>
+    </ul>
+
 <hr />
 <h2 id="_8">✅ 점검하기<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2095,27 +2043,17 @@
 
 </details>
 
-<ol>
-<li><code>plt.ylabel('점수 (점)')</code>에서 <strong>(점)</strong> 을 붙이는 이유는 무엇인가요?</li>
-</ol>
-<details><summary>정답 확인</summary>
-
-**단위**를 명시하기 위해서예요. "점수"만 쓰면 100점 만점인지, 1000점 만점인지 모르잖아요. 단위가 있어야 데이터를 정확하게 해석할 수 있어요.
-
-</details>
-
 <hr />
 <h2 id="_9">📌 이 장의 핵심 정리<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li>✅ 좋은 그래프는 <strong>제목 / 축 레이블+단위 / 색상 구분 / 범례</strong> 를 갖춰야 해요</li>
-<li>✅ 그래프를 만든 후 <strong>5가지 체크리스트</strong>로 스스로 점검하는 습관이 중요해요</li>
-<li>✅ <code>plt.tight_layout()</code>은 레이아웃을 자동으로 정리해주는 유용한 한 줄이에요</li>
+<li>✅ 그래프를 만든 후 <strong>체크리스트</strong>로 스스로 점검하는 습관이 중요해요</li>
+<li>✅ 차트 편집기의 "맞춤 설정" 기능을 활용하면 그래프를 쉽게 다듬을 수 있어요</li>
 </ul>
 <h2 id="_10">🤔 스스로 점검해 봐요<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 내 프로젝트 그래프에 제목과 축 레이블을 모두 달았나요?</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 그래프를 처음 보는 사람도 무슨 내용인지 바로 이해할 수 있나요?</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 한글 폰트 설정을 코드 맨 위에 넣었나요?</li>
 </ul>
 <hr />
 <h2 id="_11">🚀 다음 장 미리보기<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
