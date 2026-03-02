@@ -1964,154 +1964,71 @@
 <h2 id="_2">📚 미리 알아야 할 것<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>지난 챕터들에서 우리는 그래프를 만들고, 평균·분포 같은 통계 수치를 계산하고, 두 변수 사이의 관계도 살펴봤어요. 이제 마지막 단계예요 — 그 모든 것을 하나의 <strong>이야기</strong>로 정리할 차례입니다! 🎉</p>
 <hr />
-<h2 id="_3">📚 핵심 개념<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="_4">개념: 결론이란 무엇인가?<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><strong>비유로 시작</strong>: 결론은 마치 탐정 드라마의 마지막 장면과 같아요. 지금까지 수집한 단서(데이터)를 모두 꺼내놓고, "범인은 바로 이것입니다!"라고 선언하는 순간이죠.</p>
-<p><strong>정확한 정의</strong>: 결론이란 처음에 던진 질문에 대해, 데이터 분석 결과가 어떤 답을 주는지 <strong>한 문단으로 요약한 것</strong>이에요.</p>
-<p><strong>결론 작성 템플릿</strong>:</p>
-<blockquote>
-<p><strong>"본 프로젝트에서는 [무엇]을 분석한 결과, [어떤 경향/패턴]임을 확인하였다."</strong></p>
-</blockquote>
-<p>예시를 볼까요?</p>
-<ul>
-<li>❌ 나쁜 결론: "수면 시간과 성적을 분석했습니다. 그래프를 보면 알 수 있습니다."</li>
-<li>✅ 좋은 결론: "본 프로젝트에서는 고등학생 50명의 수면 시간과 시험 성적의 관계를 분석한 결과, 하루 7시간 이상 자는 학생의 평균 성적이 그렇지 않은 학생보다 약 12점 높음을 확인하였다."</li>
-</ul>
-<p>차이가 느껴지시나요? 좋은 결론에는 <strong>숫자</strong>가 들어가고, <strong>처음 질문에 직접 답</strong>해요.</p>
-<hr />
-<blockquote>
-<p>💡 <strong>잠깐!</strong> "결론에 숫자를 넣어야 한다니 어렵겠다"고 느끼셨나요?
-걱정 마세요! 앞 챕터에서 계산한 평균값, 상관계수를 그대로 가져오면 돼요. 새로 계산할 필요 없습니다. 😊</p>
-</blockquote>
-<hr />
-<h3 id="_5">개념: 한계점이란?<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><strong>비유로 시작</strong>: 한계점은 마치 날씨 예보의 면책 문구와 같아요. "이 예보는 서울 기준이며, 산간 지역은 다를 수 있습니다"라고 솔직하게 밝히는 것이죠.</p>
-<p>한계점을 인정하는 것은 <strong>약점 고백이 아니라</strong>, 오히려 <strong>좋은 연구자의 태도</strong>예요. 자기 분석의 범위를 정확히 아는 사람이 신뢰할 수 있는 연구자니까요.</p>
-<p><strong>자주 쓰는 한계점 3가지</strong>:</p>
-<ul>
-<li><strong>표본 크기</strong>: "우리 데이터는 ○○명의 응답만 포함되어 있어 전체를 대표하기 어렵다"</li>
-<li><strong>변수 누락</strong>: "성적에 영향을 주는 다른 요인(공부 시간, 스트레스 등)은 분석에 포함되지 않았다"</li>
-<li><strong>수집 방법</strong>: "설문 응답자가 모두 같은 반 친구들이라 다양한 집단을 반영하지 못한다"</li>
-</ul>
-<hr />
-<h2 id="_6">🔨 따라하기<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>이제 직접 결론과 한계점을 Python으로 정리해봐요. (코드보다 <strong>내용 작성</strong>이 핵심인 챕터예요!)</p>
-<h3 id="step-1">Step 1: 분석 요약 변수 만들기<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 분석 결과를 변수에 정리해요</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">project_title</span> <span class="o">=</span> <span class="s2">&quot;고등학생 수면 시간과 시험 성적의 관계&quot;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">sample_size</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># 분석한 데이터 수</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># 핵심 수치 (앞 챕터에서 구한 값을 여기에 넣으세요)</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">avg_score_enough_sleep</span> <span class="o">=</span> <span class="mf">78.5</span>   <span class="c1"># 충분한 수면 그룹 평균 성적</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">avg_score_less_sleep</span>   <span class="o">=</span> <span class="mf">66.2</span>   <span class="c1"># 수면 부족 그룹 평균 성적</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">correlation</span> <span class="o">=</span> <span class="mf">0.63</span>              <span class="c1"># 수면-성적 상관계수</span>
-</span></code></pre></div>
-<h3 id="step-2">Step 2: 결론 문장 자동 생성하기<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 결론 템플릿에 값을 채워 출력해요</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">conclusion</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s2">[결론]</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s2">본 프로젝트에서는 </span><span class="si">{</span><span class="n">project_title</span><span class="si">}</span><span class="s2">를 분석한 결과,</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="s2">하루 7시간 이상 수면을 취하는 학생의 평균 성적(</span><span class="si">{</span><span class="n">avg_score_enough_sleep</span><span class="si">}</span><span class="s2">점)이</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="s2">그렇지 않은 학생(</span><span class="si">{</span><span class="n">avg_score_less_sleep</span><span class="si">}</span><span class="s2">점)보다 높으며,</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="s2">두 변수의 상관계수는 </span><span class="si">{</span><span class="n">correlation</span><span class="si">}</span><span class="s2">로 양의 관계가 있음을 확인하였다.</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="s2">&quot;&quot;&quot;</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">conclusion</span><span class="p">)</span>
-</span></code></pre></div>
-<p><strong>실행 결과</strong>:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[결론]
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>본 프로젝트에서는 고등학생 수면 시간과 시험 성적의 관계를 분석한 결과,
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>하루 7시간 이상 수면을 취하는 학생의 평균 성적(78.5점)이
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>그렇지 않은 학생(66.2점)보다 높으며,
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>두 변수의 상관계수는 0.63으로 양의 관계가 있음을 확인하였다.
-</span></code></pre></div></p>
-<h3 id="step-3">Step 3: 한계점과 후속 질문 출력하기<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 한계점과 후속 질문도 정리해요</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">limitations</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="sa">f</span><span class="s2">&quot;표본 크기가 </span><span class="si">{</span><span class="n">sample_size</span><span class="si">}</span><span class="s2">명으로 전체 고등학생을 대표하기 어렵다.&quot;</span><span class="p">,</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="s2">&quot;공부 시간, 스트레스 등 성적에 영향을 주는 다른 변수는 분석에 포함되지 않았다.&quot;</span><span class="p">,</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="s2">&quot;응답자가 같은 학교 학생으로 한정되어 있다.&quot;</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">]</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">follow_up</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="s2">&quot;학년별(1~3학년)로 수면-성적 관계에 차이가 있을까?&quot;</span><span class="p">,</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="s2">&quot;주말 수면 시간도 평일과 같은 영향을 미칠까?&quot;</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">]</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[한계점]&quot;</span><span class="p">)</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lim</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">limitations</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">lim</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">[후속 질문]&quot;</span><span class="p">)</span>
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">follow_up</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">q</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<p><strong>실행 결과</strong>:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[한계점]
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  1. 표본 크기가 50명으로 전체 고등학생을 대표하기 어렵다.
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  2. 공부 시간, 스트레스 등 성적에 영향을 주는 다른 변수는 분석에 포함되지 않았다.
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  3. 응답자가 같은 학교 학생으로 한정되어 있다.
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>[후속 질문]
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>  1. 학년별(1~3학년)로 수면-성적 관계에 차이가 있을까?
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  2. 주말 수면 시간도 평일과 같은 영향을 미칠까?
-</span></code></pre></div></p>
-<blockquote>
-<p>✅ <strong>체크포인트</strong>: 세 가지 섹션(결론 / 한계점 / 후속 질문)이 모두 출력되었다면 완성이에요!</p>
-</blockquote>
-<hr />
-<h2 id="_7">📝 전체 코드<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># ✅ Chapter 15 - 결론, 한계점, 후속 질문 정리</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">project_title</span> <span class="o">=</span> <span class="s2">&quot;고등학생 수면 시간과 시험 성적의 관계&quot;</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">sample_size</span> <span class="o">=</span> <span class="mi">50</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">avg_score_enough_sleep</span> <span class="o">=</span> <span class="mf">78.5</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">avg_score_less_sleep</span>   <span class="o">=</span> <span class="mf">66.2</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">correlation</span> <span class="o">=</span> <span class="mf">0.63</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># 결론</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">conclusion</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="s2">[결론]</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="s2">본 프로젝트에서는 </span><span class="si">{</span><span class="n">project_title</span><span class="si">}</span><span class="s2">를 분석한 결과,</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="s2">하루 7시간 이상 수면을 취하는 학생의 평균 성적(</span><span class="si">{</span><span class="n">avg_score_enough_sleep</span><span class="si">}</span><span class="s2">점)이</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="s2">그렇지 않은 학생(</span><span class="si">{</span><span class="n">avg_score_less_sleep</span><span class="si">}</span><span class="s2">점)보다 높으며,</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="s2">두 변수의 상관계수는 </span><span class="si">{</span><span class="n">correlation</span><span class="si">}</span><span class="s2">로 양의 관계가 있음을 확인하였다.</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="s2">&quot;&quot;&quot;</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">conclusion</span><span class="p">)</span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="c1"># 한계점</span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="n">limitations</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>    <span class="sa">f</span><span class="s2">&quot;표본 크기가 </span><span class="si">{</span><span class="n">sample_size</span><span class="si">}</span><span class="s2">명으로 전체 고등학생을 대표하기 어렵다.&quot;</span><span class="p">,</span>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>    <span class="s2">&quot;공부 시간, 스트레스 등 다른 변수는 분석에 포함되지 않았다.&quot;</span><span class="p">,</span>
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>    <span class="s2">&quot;응답자가 같은 학교 학생으로 한정되어 있다.&quot;</span>
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="p">]</span>
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
-</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="n">follow_up</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>    <span class="s2">&quot;학년별로 수면-성적 관계에 차이가 있을까?&quot;</span><span class="p">,</span>
-</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>    <span class="s2">&quot;주말 수면 시간도 평일과 같은 영향을 미칠까?&quot;</span>
-</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="p">]</span>
-</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>
-</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[한계점]&quot;</span><span class="p">)</span>
-</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lim</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">limitations</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">lim</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>
-</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">[후속 질문]&quot;</span><span class="p">)</span>
-</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">follow_up</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">q</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<hr />
-<h2 id="_8">⚠️ 주의할 점<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>"분석 결과 알 수 없었다"도 결론이에요!</strong> 관계가 없다는 것도 중요한 발견이에요. "분석 결과 두 변수 사이에 뚜렷한 관계가 확인되지 않았다"라고 당당하게 쓰세요.</li>
-<li><strong>한계점은 1~3개면 충분해요.</strong> 너무 많이 쓰면 오히려 분석 전체를 부정하는 것처럼 보일 수 있어요.</li>
-</ul>
-<hr />
-<h2 id="_9">📌 이 장의 핵심 정리<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<ul>
-<li>✅ 결론은 <strong>처음 질문 + 핵심 수치 + 발견한 경향</strong>을 한 문단에 담아요</li>
-<li>✅ 한계점을 솔직하게 쓰는 것은 <strong>좋은 연구자의 태도</strong>예요</li>
-<li>✅ 후속 질문은 내 분석을 한 단계 더 발전시키는 시작점이에요</li>
-</ul>
+  <h2>📚 핵심 개념</h2>
+  <div class="concept">
+    <h3>결론이란 무엇인가?</h3>
+    <p>결론은 마치 <strong>탐정 드라마의 마지막 장면</strong>과 같아요. 지금까지 모은 단서(데이터)를 꺼내놓고, "범인은 바로 이것입니다!"라고 말하는 순간이죠.</p>
+    <p><strong>정의</strong>: 결론은 처음에 던진 질문에 대해, 데이터 분석 결과가 어떤 답을 주는지 한 문단으로 요약한 것입니다.</p>
+    <p><strong>결론 작성 템플릿</strong>: "본 프로젝트에서는 [무엇]을 분석한 결과, [어떤 경향/패턴]임을 확인하였다."</p>
+    <p>✅ 좋은 결론 예시: "본 프로젝트에서는 고등학생 50명의 수면 시간과 시험 성적의 관계를 분석한 결과, 하루 7시간 이상 자는 학생의 평균 성적이 그렇지 않은 학생보다 약 12점 높음을 확인하였다."</p>
+  </div>
+
+  <div class="concept">
+    <h3>한계점이란 무엇인가?</h3>
+    <p>한계점은 마치 <strong>날씨 예보의 면책 문구</strong>와 같아요. "이 예보는 서울 기준이며, 산간 지역은 다를 수 있습니다"라고 솔직하게 밝히는 것이죠.</p>
+    <p>자주 쓰는 한계점 예시:</p>
+    <ul>
+      <li>표본 크기: "우리 데이터는 ○○명의 응답만 포함되어 있어 전체를 대표하기 어렵다."</li>
+      <li>변수 누락: "성적에 영향을 주는 다른 요인(공부 시간, 스트레스 등)은 분석에 포함되지 않았다."</li>
+      <li>수집 방법: "응답자가 모두 같은 반 친구들이라 다양한 집단을 반영하지 못한다."</li>
+    </ul>
+  </div>
+
+  <h2>🔨 따라하기</h2>
+
+  <div class="step">
+    <h3>Step 1: 결론 작성하기</h3>
+    <p>스프레드시트에서 계산한 평균값, 상관계수 등을 바탕으로 결론 문장을 작성하세요.</p>
+    <p><strong>예시 문장</strong>: "본 프로젝트에서는 고등학생 수면 시간과 시험 성적의 관계를 분석한 결과, 하루 7시간 이상 수면을 취하는 학생의 평균 성적(78.5점)이 그렇지 않은 학생(66.2점)보다 높으며, 두 변수의 상관계수는 0.63으로 양의 관계가 있음을 확인하였다."</p>
+  </div>
+
+  <div class="step">
+    <h3>Step 2: 한계점 작성하기</h3>
+    <p>내 분석의 범위를 솔직하게 밝히세요.</p>
+    <ul>
+      <li>표본 크기가 50명으로 전체 고등학생을 대표하기 어렵다.</li>
+      <li>공부 시간, 스트레스 등 성적에 영향을 주는 다른 변수는 포함되지 않았다.</li>
+      <li>응답자가 같은 학교 학생으로 한정되어 있다.</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h3>Step 3: 후속 질문 제시하기</h3>
+    <p>내 분석을 한 단계 더 발전시킬 수 있는 질문을 적어보세요.</p>
+    <ul>
+      <li>학년별(1~3학년)로 수면-성적 관계에 차이가 있을까?</li>
+      <li>주말 수면 시간도 평일과 같은 영향을 미칠까?</li>
+    </ul>
+  </div>
+
+  <div class="warning">
+    <h3>⚠️ 주의할 점</h3>
+    <ul>
+      <li>"분석 결과 알 수 없었다"도 결론이에요! 관계가 없다는 것도 중요한 발견입니다.</li>
+      <li>한계점은 1~3개면 충분해요. 너무 많이 쓰면 오히려 분석 전체를 부정하는 것처럼 보일 수 있어요.</li>
+    </ul>
+  </div>
+
+  <div class="summary">
+    <h3>📌 핵심 정리</h3>
+    <ul>
+      <li>결론은 처음 질문 + 핵심 수치 + 발견한 경향을 한 문단에 담는다.</li>
+      <li>한계점을 솔직하게 쓰는 것은 좋은 연구자의 태도다.</li>
+      <li>후속 질문은 내 분석을 한 단계 더 발전시키는 시작점이다.</li>
+    </ul>
+  </div>
+
+
 <hr />
 <h2 id="_10">🤔 스스로 점검해 봐요<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <ol>
