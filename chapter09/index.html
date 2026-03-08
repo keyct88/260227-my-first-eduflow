@@ -2032,61 +2032,25 @@
 </blockquote>
 <hr />
 <h2 id="_5">🔨 따라하기<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h3 id="step-1">Step 1: 막대그래프 그려보기<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h3>
+<h3 id="step-1">1: 막대그래프 그려보기<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h3>
 <p><strong>목표</strong>: 좋아하는 과목 데이터를 막대그래프로 그려요.</p>
-<p><strong>코드:</strong></p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># 데이터 준비</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;수학&#39;</span><span class="p">,</span> <span class="s1">&#39;영어&#39;</span><span class="p">,</span> <span class="s1">&#39;과학&#39;</span><span class="p">,</span> <span class="s1">&#39;국어&#39;</span><span class="p">,</span> <span class="s1">&#39;체육&#39;</span><span class="p">]</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">counts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 막대그래프 그리기</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">subjects</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">)</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;좋아하는 과목 조사&#39;</span><span class="p">)</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;과목&#39;</span><span class="p">)</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;학생 수 (명)&#39;</span><span class="p">)</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</span></code></pre></div>
-<p><strong>실행 결과:</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>📊 막대 5개짜리 그래프가 화면에 나타나요.
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   체육 막대가 가장 높고(19), 국어가 가장 낮아요(6).
-</span></code></pre></div>
-<blockquote>
-<p>✅ <strong>체크포인트</strong>: 그래프 창이 뜨고 막대 5개가 보인다면 성공이에요!</p>
-</blockquote>
-<hr />
-<h3 id="step-2">Step 2: 한글 깨짐 해결하기<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
-<p>한글이 □□□로 깨져 보이면 아래 두 줄을 코드 맨 위에 추가하세요.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Malgun Gothic&#39;</span>   <span class="c1"># 윈도우</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># plt.rcParams[&#39;font.family&#39;] = &#39;AppleGothic&#39;  # 맥OS는 이 줄 사용</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.unicode_minus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
-</span></code></pre></div>
-<hr />
-<h2 id="_6">📝 전체 코드<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># 한글 폰트 설정</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Malgun Gothic&#39;</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.unicode_minus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># 데이터</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;수학&#39;</span><span class="p">,</span> <span class="s1">&#39;영어&#39;</span><span class="p">,</span> <span class="s1">&#39;과학&#39;</span><span class="p">,</span> <span class="s1">&#39;국어&#39;</span><span class="p">,</span> <span class="s1">&#39;체육&#39;</span><span class="p">]</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">counts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1"># 막대그래프</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">subjects</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">)</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;좋아하는 과목 조사&#39;</span><span class="p">)</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;과목&#39;</span><span class="p">)</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;학생 수 (명)&#39;</span><span class="p">)</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</span></code></pre></div>
+<ol>
+      <li>스프레드시트에 아래 데이터를 입력하세요:<br>
+        A열: 과목 → 수학, 영어, 과학, 국어, 체육<br>
+        B열: 학생 수 → 12, 8, 15, 6, 19
+      </li>
+      <li>데이터 범위(A1:B6)를 선택 → 상단 메뉴 [삽입] → [차트] 클릭</li>
+      <li>차트 유형을 "막대그래프"로 변경</li>
+      <li>차트 제목: "좋아하는 과목 조사"<br>
+          x축 제목: "과목"<br>
+          y축 제목: "학생 수 (명)"</li>
+    </ol>
+    <p>✅ 체크포인트: 막대 5개가 보이고, 체육 막대가 가장 높으며(19), 국어가 가장 낮으면(6) 성공이에요!</p>
 <hr />
 <h2 id="_7">⚠️ 주의할 점<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>그래프 유형을 잘못 선택하면</strong> 데이터가 왜곡되어 보일 수 있어요. 예를 들어 "시간에 따른 변화"에 원그래프를 쓰면 변화 흐름을 전혀 보여줄 수 없어요.</li>
-<li><strong>matplotlib은 기본적으로 영어 전용</strong>이라 한글 폰트 설정을 반드시 해줘야 해요. 실행 전 폰트 설정 두 줄을 꼭 확인하세요!</li>
+<li><strong>차트 제목과 축 레이블을 반드시 추가하세요. 그래프만 보면 무엇을 나타내는지 알기 어렵습니다.</li>
 </ul>
 <hr />
 <h2 id="_8">✅ 점검하기<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
